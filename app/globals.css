@@ -1,26 +1,122 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-syne);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Precise Brand Colors */
+  --color-brand-cyan: #2FB0FF;
+  --color-brand-yellow: #FFD700;
+  --color-brand-navy: #050B1B;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: 226 58% 6%;
+  /* #050B1B */
+  --foreground: 0 0% 100%;
+
+  --card: 226 58% 8%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 226 58% 6%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 191 100% 50%;
+  /* #00D2FF */
+  --primary-foreground: 226 58% 6%;
+
+  --secondary: 51 100% 50%;
+  /* #FFD700 */
+  --secondary-foreground: 226 58% 6%;
+
+  --muted: 226 30% 12%;
+  --muted-foreground: 226 10% 70%;
+
+  --accent: 226 30% 15%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 226 30% 15%;
+  --input: 226 30% 15%;
+  --ring: 191 100% 50%;
+
+  --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tighter;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(47, 176, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 176, 255, 0.04) 1px, transparent 1px);
+    background-size: 65px 65px;
+  }
+
+  .banner-gradient {
+    background: radial-gradient(circle at 50% 0%, #101830 0%, #050B1B 70%);
+  }
+
+  .hero-headline {
+    @apply text-[3.5rem] md:text-[4rem] leading-[1.4] font-[800] tracking-[-0.03em];
+  }
+
+  .glass-card {
+    @apply bg-[#050B1B]/80 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+  }
 }
