@@ -47,7 +47,7 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="relative py-32 bg-brand-navy overflow-hidden">
+    <section id="why-us" className="relative py-16 md:py-32 bg-brand-navy overflow-hidden">
       <div className="max-w-[1340px] mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header */}

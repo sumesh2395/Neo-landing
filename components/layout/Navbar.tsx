@@ -54,14 +54,14 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-[73px] bg-[#050B1B] z-40 border-t border-white/5 animate-in slide-in-from-right duration-300">
-          <div className="flex flex-col p-8 gap-8">
+        <div className="lg:hidden fixed inset-0 top-[73px] z-[9999] bg-brand-navy opacity-100 animate-in slide-in-from-right duration-300">
+          <div className="flex flex-col p-8 gap-8 bg-brand-navy h-screen border-t border-white/5">
             {navLinks.map((item) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-bold tracking-tight text-white/90 hover:text-brand-cyan transition-all"
+                className="text-2xl font-bold tracking-tight text-white/90 hover:text-brand-cyan transition-all active:scale-95"
               >
                 {item}
               </Link>

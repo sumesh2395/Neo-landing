@@ -47,7 +47,7 @@ export const Standards = () => {
   ];
 
   return (
-    <section className="relative pt-10 pb-20 bg-brand-navy overflow-hidden">
+    <section id="standards" className="relative pt-10 pb-20 bg-brand-navy overflow-hidden">
       <div className="max-w-[1340px] mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header */}

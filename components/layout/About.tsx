@@ -3,12 +3,12 @@ import { Target, Smartphone, Sparkles } from "lucide-react";
 
 export const About = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-brand-navy">
+    <section id="about" className="relative py-16 md:py-24 overflow-hidden bg-brand-navy">
       <div className="max-w-[1340px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Left Column - Image & Stats Overlay */}
-          <div className="relative group">
+          
+          {/* Left Column - Image & Stats Overlay (Order 2 on mobile, 1 on desktop) */}
+          <div className="relative group order-2 lg:order-1">
             <div className="relative flex items-center justify-center aspect-square md:aspect-video lg:aspect-square rounded-[2.5rem] overflow-hidden glass-card border-white/5">
               <Image
                 src="/graduate-hat.png"
@@ -17,7 +17,7 @@ export const About = () => {
                 height={150}
                 className="object-contain opacity-80 group-hover:scale-105 transition-transform duration-700"
               />
-
+              
               {/* Stats Overlay - Top Left */}
               <div className="absolute top-6 left-6 glass-card p-4 rounded-2xl border-white/10 backdrop-blur-md">
                 <span className="block text-2xl font-black text-brand-cyan tracking-tighter">+34%</span>
@@ -35,8 +35,8 @@ export const About = () => {
             <div className="absolute -z-10 -bottom-10 -right-10 w-64 h-64 bg-brand-cyan/20 rounded-full blur-[100px]" />
           </div>
 
-          {/* Right Column - Content */}
-          <div className="flex flex-col gap-8">
+          {/* Right Column - Content (Order 1 on mobile, 2 on desktop) */}
+          <div className="flex flex-col gap-8 order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 self-start">
               <Sparkles className="w-3 h-3 text-brand-cyan" />
               <span className="text-[10px] font-black tracking-[0.2em] uppercase text-brand-cyan">

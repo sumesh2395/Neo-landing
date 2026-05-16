@@ -43,7 +43,7 @@ export const Reviews = () => {
   const prev = () => setActiveIndex((prev) => (prev - 1 + totalPages) % totalPages);
 
   return (
-    <section className="relative py-32 bg-brand-navy overflow-hidden">
+    <section id="reviews" className="relative py-32 bg-brand-navy overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
