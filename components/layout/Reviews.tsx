@@ -7,7 +7,7 @@ export const Reviews = () => {
     {
       name: "Ananya Sharma",
       info: "Class 12 - Boards (96%)",
-      text: '"BrightPath\'s chemistry teacher made organic reactions feel like storytelling. I went from 58% to 96% in just 6 months!"',
+      text: '"Neo Home\'s chemistry teacher made organic reactions feel like storytelling. I went from 58% to 96% in just 6 months!"',
     },
     {
       name: "Rohan Mehta",
@@ -58,11 +58,11 @@ export const Reviews = () => {
           </div>
 
           <h2 className="text-[2rem] md:text-[3rem] leading-[1.2] font-[800] tracking-[-0.03em] text-white max-w-4xl">
-            Stories that <span className="text-[#FF5C77]">inspire</span>
+            Trusted by Parents & <span className="text-[#FF5C77]">Students</span>
           </h2>
 
-          <p className="text-lg text-white/50 leading-relaxed font-normal max-w-2xl">
-            Hear from students who transformed their grades and confidence with BrightPath Academy.
+          <p className="text-xl text-white/80 leading-relaxed font-bold max-w-3xl">
+            "Hundreds of students are learning with Neo Home across Kerala, Bangalore & Gulf countries"
           </p>
         </div>
 

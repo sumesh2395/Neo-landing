@@ -15,10 +15,10 @@ export const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <span className="text-2xl md:text-3xl font-black tracking-tighter font-heading text-brand-cyan">
-            Bright
+            Neo
           </span>
-          <span className="text-2xl md:text-3xl font-black tracking-tighter font-heading text-brand-yellow">
-            Path
+          <span className="text-2xl md:text-3xl font-black tracking-tighter font-heading text-white ml-1">
+            Home
           </span>
         </Link>
 

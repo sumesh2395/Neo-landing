@@ -1,48 +1,60 @@
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const Standards = () => {
   const standards = [
     {
-      num: "6th",
-      subTitle: "Standard",
-      subjects: ["Maths", "Science", "English", "SST"],
+      num: "NEET",
+      subTitle: "Coaching",
+      subjects: ["Physics", "Chemistry", "Biology"],
       gradient: "from-[#FF5C77] to-[#FF8C42]",
     },
     {
-      num: "7th",
-      subTitle: "Standard",
-      subjects: ["Maths", "Science", "English", "SST"],
+      num: "JEE",
+      subTitle: "Coaching",
+      subjects: ["Physics", "Chemistry", "Maths"],
       gradient: "from-[#FFD700] to-[#FFA500]",
     },
     {
-      num: "8th",
-      subTitle: "Standard",
-      subjects: ["Maths", "Science", "English", "SST"],
+      num: "CBSE",
+      subTitle: "Tuition",
+      subjects: ["All Subjects"],
       gradient: "from-[#32CD32] to-[#ADFF2F]",
     },
     {
-      num: "9th",
-      subTitle: "Standard",
-      subjects: ["Maths", "Physics", "Chemistry", "Bio"],
+      num: "STATE",
+      subTitle: "Syllabus Tuition",
+      subjects: ["All Subjects"],
       gradient: "from-[#00FFFF] to-[#7FFF00]",
     },
     {
-      num: "10th",
-      subTitle: "Standard • Board",
-      subjects: ["Maths", "Physics", "Chemistry", "Bio", "English"],
+      num: "Maths",
+      subTitle: "Special Batch",
+      subjects: ["Focus on Problem Solving"],
       gradient: "from-[#00D2FF] to-[#3A7BD5]",
     },
     {
-      num: "11th",
-      subTitle: "Standard + JEE/NEET",
-      subjects: ["Physics", "Chemistry", "Maths", "Biology", "JEE Prep"],
+      num: "Chemistry",
+      subTitle: "Special Batch",
+      subjects: ["Organic & Inorganic"],
       gradient: "from-[#8E2DE2] to-[#4A00E0]",
     },
     {
-      num: "12th",
-      subTitle: "Board + Competitive Exams",
-      subjects: ["Physics", "Chemistry", "Maths", "Biology", "JEE Adv", "NEET"],
+      num: "English",
+      subTitle: "Grammar Class",
+      subjects: ["Spoken English", "Grammar"],
       gradient: "from-[#F00000] to-[#DC281E]",
+    },
+    {
+      num: "+1 +2",
+      subTitle: "Commerce",
+      subjects: ["Accountancy", "Business Studies", "Economics"],
+      gradient: "from-[#FF1493] to-[#FF69B4]",
+    },
+    {
+      num: "+1 +2",
+      subTitle: "Arabic",
+      subjects: ["Language & Literature"],
+      gradient: "from-[#1E90FF] to-[#00BFFF]",
     },
   ];
 
@@ -60,12 +72,12 @@ export const Standards = () => {
           </div>
 
           <h2 className="text-[2rem] md:text-[3rem] leading-[1.2] font-[800] tracking-[-0.03em] text-white">
-            Classes for every standard, <br className="hidden md:block" />
+            Comprehensive Courses, <br className="hidden md:block" />
             tailored for <span className="text-brand-cyan">every student</span>
           </h2>
 
           <p className="text-lg text-white/50 leading-relaxed font-normal max-w-2xl">
-            Comprehensive curriculum from 6th to 12th — covering CBSE, ICSE, and State Boards with dedicated JEE/NEET tracks.
+            From focused coaching for NEET and JEE to specialized batches for specific subjects and state syllabuses.
           </p>
         </div>
 
@@ -95,10 +107,7 @@ export const Standards = () => {
                   ))}
                 </div>
 
-                <button className="flex items-center gap-2 text-brand-cyan text-sm font-bold group/btn hover:gap-3 transition-all">
-                  Explore Course
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                </button>
+                {/* Explore course removed */}
               </div>
             </div>
           ))}

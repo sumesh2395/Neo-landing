@@ -4,44 +4,23 @@ export const WhyChooseUs = () => {
   const features = [
     {
       id: "01",
-      title: "IIT & IIM Certified Teachers",
-      desc: "Every tutor passes a rigorous 5-stage screening. Only the top 3% make it to our platform, ensuring premium instruction.",
+      title: "Female Teachers Only",
+      desc: "We prioritize a comfortable and safe learning environment, guided entirely by experienced female educators.",
       icon: <GraduationCap className="w-7 h-7 text-brand-yellow" />,
       iconBg: "bg-brand-yellow/10 border-brand-yellow/20",
     },
     {
       id: "02",
-      title: "Live Doubt Solving",
-      desc: "Ask doubts instantly during live class or via our 24/7 doubt chat. Average response time is under 4 minutes.",
+      title: "Extra Caring",
+      desc: "Our tutors provide personalized attention, treating every student with the patience and care they deserve.",
       icon: <MessageSquare className="w-7 h-7 text-brand-cyan" />,
       iconBg: "bg-brand-cyan/10 border-brand-cyan/20",
     },
     {
       id: "03",
-      title: "Weekly Mock Tests",
-      desc: "Chapter-wise and full-length tests with detailed performance analytics to track your progress over time.",
-      icon: <LineChart className="w-7 h-7 text-green-400" />,
-      iconBg: "bg-green-400/10 border-green-400/20",
-    },
-    {
-      id: "04",
-      title: "HD Recorded Lectures",
-      desc: "Miss a class? Every session is recorded in full HD and available on-demand—forever in your account.",
-      icon: <PlayCircle className="w-7 h-7 text-purple-400" />,
-      iconBg: "bg-purple-400/10 border-purple-400/20",
-    },
-    {
-      id: "05",
-      title: "Parent Progress Reports",
-      desc: "Weekly automated reports sent to parents detailing attendance, scores, and improvement recommendations.",
-      icon: <ClipboardList className="w-7 h-7 text-orange-400" />,
-      iconBg: "bg-orange-400/10 border-orange-400/20",
-    },
-    {
-      id: "06",
-      title: "Affordable & Flexible Plans",
-      desc: "Subject-wise or full-package plans starting at ₹499/month. EMI available. No hidden charges ever.",
-      icon: <Wallet className="w-7 h-7 text-pink-400" />,
+      title: "Rewards for Good Scores",
+      desc: "Gifts will be given if you score well! We actively motivate students to perform their best with exciting rewards.",
+      icon: <Sparkles className="w-7 h-7 text-pink-400" />,
       iconBg: "bg-pink-400/10 border-pink-400/20",
     },
   ];
@@ -60,12 +39,11 @@ export const WhyChooseUs = () => {
           </div>
 
           <h2 className="text-[2rem] md:text-[3rem] leading-[1.2] font-[800] tracking-[-0.03em] text-white ">
-            Everything a student needs to <br className="hidden md:block" />
-            <span className="text-brand-yellow italic">excel academically</span>
+            Why <span className="text-brand-yellow italic">Neo Home?</span>
           </h2>
 
           <p className="text-lg text-white/50 leading-relaxed font-normal max-w-2xl">
-            We combine the best educators with technology to deliver an unmatched online learning experience.
+            We combine the best educators with a caring environment to deliver an unmatched online learning experience.
           </p>
         </div>
 

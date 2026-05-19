@@ -112,7 +112,7 @@
   }
 
   .hero-headline {
-    @apply text-[2.5rem] min-[600px]:text-[3.5rem] md:text-[4rem] leading-[1.4] font-[800] tracking-[-0.03em];
+    @apply text-[2rem] min-[600px]:text-[2.75rem] md:text-[3rem] leading-[1.4] font-[800] tracking-[-0.03em];
   }
 
   .glass-card {

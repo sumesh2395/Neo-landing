@@ -14,8 +14,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "BrightPath Academy - Learn Smarter, Score Higher",
-  description: "India's #1 Online Tuition Platform for Class 6-12, JEE & NEET.",
+  title: "Neo Home - Learn Smarter, Score Higher",
+  description: "Kerala's Trusted Online Tuition Platform for CBSE/STATE, JEE & NEET.",
 };
 
 export default function RootLayout({

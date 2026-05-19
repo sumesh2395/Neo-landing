@@ -14,44 +14,33 @@ export const Hero = () => {
             <div className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-brand-cyan/20 border border-white/10 backdrop-blur-md self-start">
               <span className="text-brand-yellow text-xs">✦</span>
               <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-brand-cyan">
-                India's #1 Online Tuition Platform
+                Kerala's Trusted online tuition platform
               </span>
             </div>
             <div className="flex flex-col space-y-0 md:-space-y-4">
-              <h2 className="hero-headline text-white">Learn</h2>
-              <h2 className="hero-headline text-white">Smarter,</h2>
-              <h2 className="hero-headline text-white">
-                Score <span className="text-brand-cyan ">Higher</span>
-              </h2>
-              <h2 className="hero-headline text-white">with</h2>
-              <div className="flex flex-col ">
-                <h2 className="hero-headline text-brand-yellow">Expert</h2>
-                <h2 className="hero-headline text-brand-yellow">Tutors</h2>
-              </div>
+              <h2 className="hero-headline text-white">CBSE / <span className="text-brand-cyan">STATE</span></h2>
+              <h2 className="hero-headline text-white">NEET / JEE</h2>
+              <h2 className="hero-headline text-brand-yellow">ICSE</h2>
             </div>
 
             {/* Description */}
-            <p className="text-sm md:text-lg text-white/50 max-w-xl leading-relaxed font-normal">
-              Live interactive classes for students from 6th to 12th standard.
-              Expert teachers, personalised attention, and proven results—from the comfort of your home.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="h-14 px-10 rounded-full bg-brand-cyan text-brand-navy font-bold text-base hover:bg-brand-cyan/90 transition-all">
-                Start Free Trial
-              </Button>
-              <Button variant="outline" className="h-14 px-10 rounded-full border-brand-cyan/30 bg-transparent text-white font-bold text-base hover:bg-brand-cyan/10 hover:border-brand-cyan transition-all">
-                Explore Classes
-              </Button>
+            <div className="flex flex-col gap-2 pt-2">
+              <p className="text-sm md:text-lg text-white/70 max-w-xl leading-relaxed font-medium">
+                Live interactive classes • Experienced Teachers • One to one & group tuition • Flexible Timings • Affordable fees
+              </p>
+              <p className="text-sm font-bold text-brand-yellow italic">
+                Good Expert teachers, live classes, better Results
+              </p>
             </div>
+
+            {/* Buttons section removed */}
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-white/5">
               {[
-                { val: "50K+", label: "Students Enrolled" },
-                { val: "98%", label: "Pass Rate" },
-                { val: "500+", label: "Expert Tutors" },
+                { val: "500+", label: "Students" },
+                { val: "35+", label: "Teachers" },
+                { val: "2+", label: "Years Experience" },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col gap-1">
                   <span className="text-3xl md:text-4xl font-heading font-[800] text-brand-cyan tracking-[-0.03em]">
@@ -75,32 +64,21 @@ export const Hero = () => {
               {/* Card Header */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/30">
-                  <div className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-                  <span className="text-[10px] font-bold text-brand-cyan uppercase tracking-widest">Live Now</span>
+                  <span className="text-[10px] font-bold text-brand-cyan uppercase tracking-widest">Featured Course</span>
                 </div>
               </div>
 
               {/* Course Title */}
               <div className="space-y-3 mb-5">
                 <h3 className="text-xl md:text-2xl font-bold leading-[1.1] tracking-tight text-white">
-                  Chapter 12:
-                  Organic Chemistry
+                  NEET Intensive Batch
                 </h3>
                 <p className="text-white/50 text-sm font-medium tracking-wide">
-                  Class 12 • Chemistry • Ms. Priya Sharma
+                  Physics • Chemistry • Biology
                 </p>
               </div>
 
-              {/* Progress */}
-              <div className="space-y-4">
-                <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-[68%] bg-brand-cyan shadow-[0_0_15px_rgba(0,210,255,0.8)]" />
-                </div>
-                <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-widest text-white/40">
-                  <span >68% complete</span>
-                  <span>32 min left</span>
-                </div>
-              </div>
+              {/* Progress removed */}
 
               {/* Card Footer */}
               <div className="pt-10 flex items-center justify-between border-t border-white/5 mt-5">
