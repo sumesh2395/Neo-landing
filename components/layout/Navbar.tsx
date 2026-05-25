@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["About", "Why Us", "Reviews", "Standards"];
+  const navLinks = ["About", "Why Us", "Reviews", "Faculty", "Standards"];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#080E21] border-b border-white/5 backdrop-blur-md">

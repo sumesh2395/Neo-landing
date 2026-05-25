@@ -1,0 +1,164 @@
+[
+  {
+    "name": "SNEHA FRIJO",
+    "subject": "CHEMISTRY   SCIENCE",
+    "experience": "6 YEARS",
+    "classes": "8-12 GRADE",
+    "syllabus": "STATE   CBSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/sneha-frijo.png"
+  },
+  {
+    "name": "MONISHA MOHAN P",
+    "subject": "ENGLISH",
+    "experience": "13 YEARS",
+    "classes": "4-10 GRADE",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "ENGLISH  MALAYALAM HINDI",
+    "image": "/faculty/monisha-mohan-p.png"
+  },
+  {
+    "name": "SHABNA T S",
+    "subject": "BIOLOGY",
+    "experience": "7 YEARS",
+    "classes": "6-12 GRADES",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/shabna-t-s.png"
+  },
+  {
+    "name": "NASEERA  K I",
+    "subject": "PHYSICS",
+    "experience": "13 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE  ICSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/naseera-k-i.png"
+  },
+  {
+    "name": "HUDARAHMAN",
+    "subject": "SOCIAL SCIENCE , ECONOMICS",
+    "experience": "7 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/hudarahman.png"
+  },
+  {
+    "name": "RIYA BAIJU",
+    "subject": "PHYSICS  CHEMISTRY",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE  ICSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/riya-baiju.png"
+  },
+  {
+    "name": "RASHIDA K",
+    "subject": "ENGLISH",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/rashida-k.png"
+  },
+  {
+    "name": "GOWRY SURESH",
+    "subject": "CHEMISTRY PHSYICS",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE  ICSE",
+    "languages": "ENGLISH MALAYALAM  HINDI    TAMIL",
+    "image": "/faculty/gowry-suresh.png"
+  },
+  {
+    "name": "SUNISHA",
+    "subject": "MATHEMATICS",
+    "experience": "ABOVE 6 YEARS",
+    "classes": "9-12 GRADE",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "MALAYALAM  ENGLISH  TAMIL",
+    "image": "/faculty/sunisha.png"
+  },
+  {
+    "name": "FEBINA T B",
+    "subject": "CHEMISTRY",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "CBSE   STATE",
+    "languages": "MALAYALAM  ENGLISH  TAMIL",
+    "image": "/faculty/febina-t-b.png"
+  },
+  {
+    "name": "ROSEMOL NITHIN",
+    "subject": "MATHEMATICS  ACCOUNTANCY  BUSINESS STUDIES",
+    "experience": "6 YEARS",
+    "classes": "1-12 GRADE",
+    "syllabus": "CBSE  STATE     ICSE      IGCSE     OTHER",
+    "languages": "MALAYALAM  ENGLISH  TAMIL",
+    "image": "/faculty/rosemol-nithin.png"
+  },
+  {
+    "name": "ATHIRA V S",
+    "subject": "MATHEMATICS",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "CBSE   STATE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/athira-v-s.png"
+  },
+  {
+    "name": "ATHULYA",
+    "subject": "CHEMISTRY",
+    "experience": "ABOVE 9 YEARS                    B.ED",
+    "classes": "6-12 GRADE",
+    "syllabus": "CBSE   STATE  NEET/JEE  ALL SYLLABUS",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/athulya.png"
+  },
+  {
+    "name": "ATHIRA K P",
+    "subject": "CHEMISTRY",
+    "experience": "ABOVE 9 YEARS                    B.ED                            KTET                                    BDM POST",
+    "classes": "6-12 GRADE",
+    "syllabus": "CBSE             STATE                          ALL SYLLABUS",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/athira-k-p.png"
+  },
+  {
+    "name": "DEVIKA",
+    "subject": "PHYSICS",
+    "experience": "ABOVE  6 YEARS",
+    "classes": "9-12 GRADE",
+    "syllabus": "CBSE   STATE  NEET/JEE  ALL SYLLABUS",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/devika.png"
+  },
+  {
+    "name": "AAFIYA HASHIER",
+    "subject": "MATHS  COMMERCE  COMPUTER SCIENCE  AI",
+    "experience": "6 YEARS",
+    "classes": "9-12 GRADE               UG",
+    "syllabus": "STATE  CBSE ICSE IGCSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": null
+  },
+  {
+    "name": "ANUSHA S",
+    "subject": "HINDI",
+    "experience": "7 YEARS",
+    "classes": "5-10 GRADE",
+    "syllabus": "STATE  CBSE",
+    "languages": "ENGLISH               MALAYALAM          HINDI",
+    "image": "/faculty/anusha-s.png"
+  },
+  {
+    "name": "GINCY VIJAYAN",
+    "subject": "SOCIAL SCIENCE , ECONOMICS , BUSINESS STUDIES    COMMERCE    SOCIOLOGY   , HISTORY    ,    GEOGRAPHY   POLITICAL SCIENCE",
+    "experience": "6 YEARS",
+    "classes": "6-12 GRADE",
+    "syllabus": "STATE  CBSE",
+    "languages": "ENGLISH MALAYALAM",
+    "image": "/faculty/gincy-vijayan.png"
+  }
+]
