@@ -1,15 +1,30 @@
 "use client";
 import Image from "next/image";
-import { Sparkles, ChevronLeft, ChevronRight, User } from "lucide-react";
-import { useState } from "react";
+import { Sparkles, ChevronLeft, ChevronRight, User, Crown } from "lucide-react";
+import { useState, useEffect } from "react";
 import facultyData from "@/data/faculty.json";
 
 export default function Faculty() {
   const [activeIndex, setActiveIndex] = useState(0);
-  
-  // Use 2 cards per page for a wider, horizontal card layout on desktop
-  const itemsPerPage = 2;
+  const [itemsPerPage, setItemsPerPage] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 1024 ? 1 : 2);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const totalPages = Math.ceil(facultyData.length / itemsPerPage);
+
+  useEffect(() => {
+    if (activeIndex >= totalPages && totalPages > 0) {
+      setActiveIndex(totalPages - 1);
+    }
+  }, [totalPages, activeIndex]);
 
   const next = () => setActiveIndex((prev) => (prev + 1) % totalPages);
   const prev = () => setActiveIndex((prev) => (prev - 1 + totalPages) % totalPages);
@@ -19,7 +34,7 @@ export default function Faculty() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-6 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cyan/10 border border-brand-cyan/20">
@@ -41,14 +56,14 @@ export default function Faculty() {
         {/* Carousel Container */}
         <div className="relative md:px-8 lg:px-12">
           {/* Arrows */}
-          <button 
+          <button
             onClick={prev}
             className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 bg-brand-navy/50 backdrop-blur-md hidden md:flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-navy hover:border-brand-cyan transition-all z-20"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          
-          <button 
+
+          <button
             onClick={next}
             className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/10 bg-brand-navy/50 backdrop-blur-md hidden md:flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-navy hover:border-brand-cyan transition-all z-20"
           >
@@ -56,24 +71,27 @@ export default function Faculty() {
           </button>
 
           <div className="overflow-hidden pb-4">
-            <div 
+            <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {[...Array(totalPages)].map((_, pageIdx) => (
                 <div key={pageIdx} className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 gap-6 px-2">
                   {facultyData.slice(pageIdx * itemsPerPage, (pageIdx + 1) * itemsPerPage).map((faculty, i) => (
-                    <div 
-                      key={i} 
-                      className="bg-brand-cyan/[0.03] backdrop-blur-md rounded-[2.5rem] border border-brand-cyan/10 flex flex-col sm:flex-row overflow-hidden hover:bg-brand-cyan/[0.06] hover:border-brand-cyan/30 hover:-translate-y-2 transition-all duration-300 group h-full"
+                    <div
+                      key={i}
+                      className={`backdrop-blur-md rounded-[2.5rem] border flex flex-col sm:flex-row overflow-hidden transition-all duration-300 group h-full  ${faculty.name.startsWith("ATHIRA K P")
+                        ? "bg-brand-yellow/[0.05] border-brand-yellow/30 hover:bg-brand-yellow/[0.1] hover:border-brand-yellow/50 shadow-[0_0_30px_-15px_rgba(255,189,89,0.3)]"
+                        : "bg-brand-cyan/[0.03] border-brand-cyan/10 hover:bg-brand-cyan/[0.06] hover:border-brand-cyan/30"
+                        }`}
                     >
                       {/* Image Container - Now on the left side */}
-                      <div className="relative w-full sm:w-[40%] shrink-0 h-64 sm:h-auto bg-[#0A1128] overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-white/5">
+                      <div className="relative w-full sm:w-[40%] shrink-0 aspect-[4/5] sm:aspect-auto sm:h-full bg-[#0A1128] overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-white/5">
                         {faculty.image ? (
-                          <Image 
-                            src={faculty.image} 
-                            alt={faculty.name} 
-                            fill 
+                          <Image
+                            src={faculty.image}
+                            alt={faculty.name}
+                            fill
                             className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                           />
                         ) : (
@@ -81,12 +99,17 @@ export default function Faculty() {
                         )}
                         {/* No gradient overlay needed here since it's a clean split layout! */}
                       </div>
-                      
+
                       {/* Details Section */}
                       <div className="p-6 sm:p-8 flex flex-col flex-grow bg-brand-navy/30 justify-center">
                         {/* Name & Subject */}
                         <div className="mb-6">
-                          <h4 className="text-2xl font-bold text-white tracking-tight leading-tight">{faculty.name}</h4>
+                          <h4 className="text-2xl font-bold text-white tracking-tight leading-tight flex items-start sm:items-center gap-2">
+                            {faculty.name}
+                            {faculty.name.startsWith("ATHIRA K P") && (
+                              <Crown className="w-5 h-5 text-brand-yellow fill-brand-yellow/20 shrink-0 mt-1 sm:mt-0" />
+                            )}
+                          </h4>
                           <span className="text-brand-cyan text-sm font-bold uppercase tracking-widest mt-1 block">
                             {faculty.subject}
                           </span>
@@ -103,7 +126,7 @@ export default function Faculty() {
                               </div>
                             </div>
                           )}
-                          
+
                           {(faculty.classes || faculty.syllabus) && (
                             <div className="flex flex-col gap-1.5">
                               <span className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Expertise</span>
@@ -146,14 +169,17 @@ export default function Faculty() {
             <button onClick={prev} className="md:hidden w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white active:bg-brand-cyan active:text-brand-navy transition-colors">
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <div className="flex gap-2">
+            <div className="hidden md:flex gap-2">
               {[...Array(totalPages)].map((_, i) => (
-                <button 
-                  key={i} 
+                <button
+                  key={i}
                   onClick={() => setActiveIndex(i)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? "w-8 bg-brand-cyan" : "w-2 bg-white/10 hover:bg-white/30"}`}
                 />
               ))}
+            </div>
+            <div className="md:hidden flex items-center justify-center text-sm font-bold text-white/50 tracking-widest min-w-[3rem]">
+              {activeIndex + 1} / {totalPages}
             </div>
             <button onClick={next} className="md:hidden w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white active:bg-brand-cyan active:text-brand-navy transition-colors">
               <ChevronRight className="w-5 h-5" />

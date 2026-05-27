@@ -1,6 +1,6 @@
 "use client";
 import { Sparkles, Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Reviews = () => {
   const reviews = [
@@ -37,7 +37,25 @@ export const Reviews = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const totalPages = Math.ceil(reviews.length / 3);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 1024 ? 1 : 3);
+    };
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(reviews.length / itemsPerPage);
+
+  useEffect(() => {
+    if (activeIndex >= totalPages && totalPages > 0) {
+      setActiveIndex(totalPages - 1);
+    }
+  }, [totalPages, activeIndex]);
 
   const next = () => setActiveIndex((prev) => (prev + 1) % totalPages);
   const prev = () => setActiveIndex((prev) => (prev - 1 + totalPages) % totalPages);
@@ -90,8 +108,8 @@ export const Reviews = () => {
             >
               {/* Group reviews into pages of 3 for desktop, or show all for mobile carousel logic */}
               {[...Array(totalPages)].map((_, pageIdx) => (
-                <div key={pageIdx} className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {reviews.slice(pageIdx * 3, (pageIdx + 1) * 3).map((r, i) => (
+                <div key={pageIdx} className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {reviews.slice(pageIdx * itemsPerPage, (pageIdx + 1) * itemsPerPage).map((r, i) => (
                     <div key={i} className="bg-brand-cyan/[0.03] backdrop-blur-md p-8 rounded-[2.5rem] border border-brand-cyan/10 flex flex-col justify-between h-full hover:bg-brand-cyan/[0.06] transition-all">
                       <div className="space-y-6">
                         <div className="flex gap-1">
@@ -120,7 +138,7 @@ export const Reviews = () => {
             <button onClick={prev} className="md:hidden w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white">
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <div className="flex gap-2">
+            <div className="hidden md:flex gap-2">
               {[...Array(totalPages)].map((_, i) => (
                 <button 
                   key={i} 
@@ -128,6 +146,9 @@ export const Reviews = () => {
                   className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? "w-8 bg-brand-cyan" : "w-2 bg-white/10"}`}
                 />
               ))}
+            </div>
+            <div className="md:hidden flex items-center justify-center text-sm font-bold text-white/50 tracking-widest min-w-[3rem]">
+              {activeIndex + 1} / {totalPages}
             </div>
             <button onClick={next} className="md:hidden w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white">
               <ChevronRight className="w-5 h-5" />

@@ -7,6 +7,7 @@ import { Reviews } from "@/components/layout/Reviews";
 import { CTA } from "@/components/layout/CTA";
 import { Footer } from "@/components/layout/Footer";
 import Faculty from "@/components/layout/Faculty";
+import { Gallery } from "@/components/layout/Gallery";
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
       <Hero />
       <About />
       <WhyChooseUs />
-      <Reviews />
-      <Faculty />
       <Standards />
+      <Faculty />
+      <Gallery />
+      <Reviews />
       <CTA />
       <Footer />
 
