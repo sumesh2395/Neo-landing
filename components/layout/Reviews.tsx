@@ -1,9 +1,14 @@
 "use client";
 import { Sparkles, Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const Reviews = () => {
   const reviews = [
+    {
+      name: "Jinsi",
+      info: "Parent - Class 9 CBSE",
+      text: '"Hi, my name is Jinsi. My son is 9th in CBSE and I had joined the demo class. I didn\'t have the money to join the class on the same day and pay the fee. My salary comes on the 23rd, so we are starting the class with Neo Home Tuition. The tuition department said that I would have to pay this fee after your salary came on the 23rd, If my son does not join the online class, the teachers will inform me soon and discuss the monthly review with me, I am a Malayali but my children don\'t speak Malayalam, so when I take Malayalam teachers\' classes in online tuition, my children are starting to try a little."',
+    },
     {
       name: "Ananya Sharma",
       info: "Class 12 - Boards (96%)",
@@ -38,6 +43,8 @@ export const Reviews = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [containerHeight, setContainerHeight] = useState<number | "auto">("auto");
+  const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,6 +57,20 @@ export const Reviews = () => {
   }, []);
 
   const totalPages = Math.ceil(reviews.length / itemsPerPage);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (pageRefs.current[activeIndex]) {
+        setContainerHeight(pageRefs.current[activeIndex]?.offsetHeight || "auto");
+      }
+    };
+    
+    // Small delay to ensure styles and layouts are computed
+    setTimeout(updateHeight, 50);
+    
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [activeIndex, itemsPerPage]);
 
   useEffect(() => {
     if (activeIndex >= totalPages && totalPages > 0) {
@@ -101,16 +122,25 @@ export const Reviews = () => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          <div className="overflow-hidden">
+          <div 
+            className="overflow-hidden transition-[height] duration-700 ease-in-out"
+            style={{ height: containerHeight === "auto" ? "auto" : `${containerHeight}px` }}
+          >
             <div 
-              className="flex transition-transform duration-700 ease-in-out"
+              className="flex transition-transform duration-700 ease-in-out items-start"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {/* Group reviews into pages of 3 for desktop, or show all for mobile carousel logic */}
               {[...Array(totalPages)].map((_, pageIdx) => (
-                <div key={pageIdx} className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div 
+                  key={pageIdx} 
+                  ref={(el) => {
+                    pageRefs.current[pageIdx] = el;
+                  }}
+                  className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start"
+                >
                   {reviews.slice(pageIdx * itemsPerPage, (pageIdx + 1) * itemsPerPage).map((r, i) => (
-                    <div key={i} className="bg-brand-cyan/[0.03] backdrop-blur-md p-8 rounded-[2.5rem] border border-brand-cyan/10 flex flex-col justify-between h-full hover:bg-brand-cyan/[0.06] transition-all">
+                    <div key={i} className="bg-brand-cyan/[0.03] backdrop-blur-md p-8 rounded-[2.5rem] border border-brand-cyan/10 flex flex-col justify-between h-auto hover:bg-brand-cyan/[0.06] transition-all">
                       <div className="space-y-6">
                         <div className="flex gap-1">
                           {[...Array(5)].map((_, i) => (

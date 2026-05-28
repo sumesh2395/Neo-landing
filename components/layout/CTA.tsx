@@ -14,7 +14,7 @@ export const CTA = () => {
         </div>
 
         <h2 className="text-[2rem] md:text-[3rem] leading-[1.1] font-[800] tracking-[-0.03em] text-white max-w-5xl">
-          Start your <span className="text-brand-cyan">free 7-day <br className="hidden md:block" /> trial</span> today
+          Start your <span className="text-brand-cyan">free 3-days <br className="hidden md:block" /> demo class</span> today
         </h2>
 
         <div className="flex flex-col items-center gap-6 pt-8">

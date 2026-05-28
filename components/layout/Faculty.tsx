@@ -7,6 +7,7 @@ import facultyData from "@/data/faculty.json";
 export default function Faculty() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(2);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,6 +26,15 @@ export default function Faculty() {
       setActiveIndex(totalPages - 1);
     }
   }, [totalPages, activeIndex]);
+
+  // Autoscroll
+  useEffect(() => {
+    if (totalPages <= 1 || isHovered) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalPages);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [totalPages, isHovered]);
 
   const next = () => setActiveIndex((prev) => (prev + 1) % totalPages);
   const prev = () => setActiveIndex((prev) => (prev - 1 + totalPages) % totalPages);
@@ -54,7 +64,11 @@ export default function Faculty() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative md:px-8 lg:px-12">
+        <div 
+          className="relative md:px-8 lg:px-12"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {/* Arrows */}
           <button
             onClick={prev}
