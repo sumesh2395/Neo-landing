@@ -3,6 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { openDemoModal } from "@/components/layout/DemoModal";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +16,8 @@ export const Navbar = () => {
       <div className="max-w-[1340px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <span className="text-2xl md:text-3xl font-black tracking-tighter font-heading text-brand-cyan">
-            Neo
-          </span>
-          <span className="text-2xl md:text-3xl font-black tracking-tighter font-heading text-white ml-1">
-            Home
-          </span>
+          <Image src="/neo_logo.png" alt="Logo" className="h-auto w-[150px]" width={300} height={300} />
+
         </Link>
 
         {/* Desktop Nav & CTA */}
@@ -37,13 +35,13 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden lg:block">
-            <Button className="bg-brand-cyan hover:bg-[#00B8E6] text-brand-navy font-medium tracking-wider rounded-full px-7 h-12 text-sm transition-all">
+            <Button onClick={openDemoModal} className="bg-brand-cyan hover:bg-[#00B8E6] text-brand-navy font-medium tracking-wider rounded-full px-7 h-12 text-sm transition-all">
               Enroll Now
             </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="lg:hidden text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -67,9 +65,12 @@ export const Navbar = () => {
               </Link>
             ))}
             <div className="pt-8 border-t border-white/5">
-              <Button 
+              <Button
                 className="w-full bg-brand-cyan hover:bg-[#00B8E6] text-brand-navy font-bold tracking-wider rounded-2xl h-14 text-lg transition-all"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  openDemoModal();
+                }}
               >
                 Enroll Now
               </Button>

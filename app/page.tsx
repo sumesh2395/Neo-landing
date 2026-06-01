@@ -8,6 +8,8 @@ import { CTA } from "@/components/layout/CTA";
 import { Footer } from "@/components/layout/Footer";
 import Faculty from "@/components/layout/Faculty";
 import { Gallery } from "@/components/layout/Gallery";
+import { Results } from "@/components/layout/Results";
+import { DemoModal } from "@/components/layout/DemoModal";
 
 export default function Home() {
   return (
@@ -19,9 +21,11 @@ export default function Home() {
       <Standards />
       <Faculty />
       <Gallery />
+      <Results />
       <Reviews />
       <CTA />
       <Footer />
+      <DemoModal />
 
       {/* Placeholder for other sections */}
       <div className="flex-1" />

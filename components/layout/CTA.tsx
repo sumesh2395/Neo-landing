@@ -1,5 +1,6 @@
 import { Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { openDemoModal } from "@/components/layout/DemoModal";
 
 export const CTA = () => {
   return (
@@ -18,7 +19,10 @@ export const CTA = () => {
         </h2>
 
         <div className="flex flex-col items-center gap-6 pt-8">
-          <Button className="h-16 px-12 rounded-full bg-gradient-to-r from-brand-cyan to-[#3A7BD5] text-brand-navy font-medium text-base hover:scale-105 transition-all  group">
+          <Button 
+            onClick={openDemoModal}
+            className="h-16 px-12 rounded-full bg-gradient-to-r from-brand-cyan to-[#3A7BD5] text-brand-navy font-medium text-base hover:scale-105 transition-all group"
+          >
             Get Started Free
             <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-2" />
           </Button>
