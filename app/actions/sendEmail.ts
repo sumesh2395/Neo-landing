@@ -1,9 +1,6 @@
 "use server";
 
 import nodemailer from "nodemailer";
-import { google } from "googleapis";
-
-const OAuth2 = google.auth.OAuth2;
 
 export async function sendDemoRequestEmail(formData: FormData) {
   try {
@@ -14,37 +11,15 @@ export async function sendDemoRequestEmail(formData: FormData) {
     const country = formData.get("Country") as string;
     const time = formData.get("Preferred Time") as string;
 
-    // 1. Configure the OAuth2 Client
-    const oauth2Client = new OAuth2(
-      process.env.GOOGLE_CLIENT_ID,
-      process.env.GOOGLE_CLIENT_SECRET,
-      "https://developers.google.com/oauthplayground"
-    );
-
-    oauth2Client.setCredentials({
-      refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
-    });
-
-    // 2. Generate a fresh Access Token
-    const accessTokenRes = await oauth2Client.getAccessToken();
-    const accessToken = accessTokenRes?.token;
-
-    if (!accessToken) {
-      throw new Error("Failed to generate OAuth access token.");
-    }
-
-    // 3. Create the Nodemailer SMTP Transporter
+    // Create the Nodemailer SMTP Transporter using App Password
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        type: "OAuth2",
         user: process.env.SENDER_EMAIL_ADDRESS,
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-        accessToken: accessToken,
+        pass: process.env.SENDER_APP_PASSWORD,
       },
     });
+
 
     const htmlTemplate = `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; margin: 0 auto;">
@@ -88,7 +63,7 @@ export async function sendDemoRequestEmail(formData: FormData) {
     // 4. Send the Email
     await transporter.sendMail({
       from: `"Neo Home Demo" <${process.env.SENDER_EMAIL_ADDRESS}>`,
-      to: "sumesh2395@gmail.com",
+      to: "arunmozhivarman.dev@gmail.com",
       subject: "New Demo Class Request - Neo Home",
       html: htmlTemplate,
     });
