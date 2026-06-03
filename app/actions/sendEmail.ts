@@ -63,7 +63,7 @@ export async function sendDemoRequestEmail(formData: FormData) {
     // 4. Send the Email
     await transporter.sendMail({
       from: `"Neo Home Demo" <${process.env.SENDER_EMAIL_ADDRESS}>`,
-      to: "arunmozhivarman.dev@gmail.com",
+      to: "sumesh2395@gmail.com",
       subject: "New Demo Class Request - Neo Home",
       html: htmlTemplate,
     });
