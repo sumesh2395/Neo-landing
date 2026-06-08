@@ -13,6 +13,9 @@ export function Gallery() {
     "/gallery/poster5.jpeg",
     "/gallery/poster6.jpeg",
     "/gallery/poster7.jpeg",
+    "/gallery/poster-8.jpg",
+    "/gallery/poster-9.jpg",
+    "/gallery/poster-10.jpg",
   ];
 
   const videos = [
