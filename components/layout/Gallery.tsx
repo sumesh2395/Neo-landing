@@ -19,6 +19,7 @@ export function Gallery() {
   ];
 
   const videos = [
+    "/gallery/2026-09-04.mp4",
     "/gallery/VID-20260525-WA0010.mp4",
     "/gallery/VID-20260525-WA0011.mp4",
     "/gallery/VID-20260525-WA0012.mp4",
