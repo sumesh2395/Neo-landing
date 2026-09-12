@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/layout/Hero";
 import { About } from "@/components/layout/About";
+import { WhyParentsChoose } from "@/components/layout/WhyParentsChoose";
 import { Standards } from "@/components/layout/Standards";
 import { WhyChooseUs } from "@/components/layout/WhyChooseUs";
 import { Reviews } from "@/components/layout/Reviews";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <WhyParentsChoose />
       <WhyChooseUs />
       <Standards />
       <Faculty />

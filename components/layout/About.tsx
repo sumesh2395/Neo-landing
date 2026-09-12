@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Target, Smartphone, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const About = () => {
   return (
@@ -50,7 +50,7 @@ export const About = () => {
             </h2>
 
             <p className="text-lg text-white/50 leading-relaxed font-normal max-w-xl">
-              Our teachers are experienced, student-friendly and focused on results. We ensure every student receives the attention and guidance they need to succeed academically.
+              Neo Home Tuition provides personalized online learning for students from Grade 5 to Grade 12 across CBSE, Kerala State, ICSE, and NEET/JEE streams. Our team of 35+ experienced educators delivers one-to-one and small-group classes tailored to each student&apos;s learning style. Serving students across India and the UAE, we focus on academic excellence through regular progress monitoring, weekly assessments, and continuous parent-teacher communication—all at affordable fees.
             </p>
           </div>
 
